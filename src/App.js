@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Cards from './Components/cards/cards';
+import Header from './Components/header/header';
+import Navbar from './Components/Navbar';
+
+const Categories = [ "Business" , "Entertainment", "General", "Health" , "Science" , "Sports", "Technology"  ]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ return(
+ <div style={{overflowX: "hidden", padding: "5rem"}}> 
+  <Header />
+  <div style={{display: "flex", gap: "2rem", background: "#f6f6f6", textDecoration: "none"}}>
+  <img src='/TOI.png' />
+  {Categories &&   
+  Categories.map((Category) => {
+        return(
+          <>
+          <Navbar title={Category} />
+          </>
+       )}
+      )
+        }
+    </div>    
+  {Categories &&   
+  Categories.map((Category) => {
+        return(
+          <>
+           <Cards category={Category} />
+          </>
+       )}
+      )
+        }
+        </div>
+ )
 }
 
 export default App;
