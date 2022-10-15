@@ -23,7 +23,7 @@ function Cards({ category }) {
 
   return (
     <a style={{margin: "12rem"}} id={category} >
-      <h1>{category + "  >"}</h1>
+      <h1>{category + "  :"}</h1>
       <div style={{display: "flex", justifyContent: "center"}}>
         <div style={{width: "50%"}}>
           <HeroCard
